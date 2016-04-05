@@ -3,7 +3,7 @@
 
 This is a ROS package of a simple RViz plugin enabling to move a Fanuc M10iA robot along it's Z axis.
 
-<img src="https://raw.githubusercontent.com/InstitutMaupertuis/simple_rviz_plugin/indigo-devel/.png" align="center" height="300">
+<img src="https://raw.githubusercontent.com/InstitutMaupertuis/simple_rviz_plugin/indigo-devel/simple_rviz_plugin.png" align="center" height="300">
 
 Directories in the project
 --------------------------
@@ -42,4 +42,7 @@ roslaunch simple_node simple_node_rviz.launch
 
 What happens
 ------------
+The button `Move robot` is connected to the [moveRobotButtonHandler](https://github.com/InstitutMaupertuis/simple_rviz_plugin/blob/indigo-devel/simple_rviz_plugin/src/simple_panel.cpp#L68-L89) slot, which fills a service request and launches a thread to send that request and wait for an answer.
+Note that the panel will remain freezed until the response has been received.
 
+For more details about why this is done like that, please read [Rviz panel and message passing](https://groups.google.com/d/msg/swri-ros-pkg-dev/nKf0h1O0h1o/AeJ8_va5DwAJ).

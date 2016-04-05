@@ -1,0 +1,9 @@
+<library path="lib/libsimple_rviz_plugin">
+  <class name="simple_rviz_plugin/Simple"
+         type="simple_rviz_plugin::SimplePanel"
+         base_class_type="rviz::Panel">
+    <description>
+      A simple panel.
+    </description>
+  </class>
+</library>

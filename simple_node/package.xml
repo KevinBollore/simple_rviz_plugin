@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+  <name>simple_node</name>
+  <version>0.0.1</version>
+  <description>Simple node</description>
+  <author>Victor Lamoine</author>
+  <maintainer email="victor.lamoine@gmail.com">Victor Lamoine</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>message_generation</build_depend>
+
+  <run_depend>roscpp</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>message_runtime</run_depend>
+  <run_depend>fanuc_m10ia_moveit_config</run_depend>
+</package>

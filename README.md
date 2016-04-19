@@ -1,6 +1,10 @@
  [![Institut Maupertuis logo](https://avatars1.githubusercontent.com/u/12760694?v=3&s=80)](http://www.institutmaupertuis.fr) Simple RViz plugin
 =============================
 
+# Travis CI
+
+[![Travis-CI](https://api.travis-ci.org/InstitutMaupertuis/simple_rviz_plugin.svg?branch=indigo-devel)](https://travis-ci.org/InstitutMaupertuis/simple_rviz_plugin/branches) 
+
 This is a ROS package of a simple RViz plugin enabling to move a Fanuc M10iA robot along it's Z axis.
 
 <img src="https://raw.githubusercontent.com/InstitutMaupertuis/simple_rviz_plugin/indigo-devel/simple_rviz_plugin.png" align="center" height="300">

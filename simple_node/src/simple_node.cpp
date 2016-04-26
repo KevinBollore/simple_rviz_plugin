@@ -25,7 +25,6 @@ bool moveRobot(simple_node::SendOffset::Request &req, simple_node::SendOffset::R
 {
   // Get parameters from the message and print them
   ROS_WARN_STREAM("moveRobot request:" << std::endl << req);
-  const float offset(req.Offset);
 
   // Get current robot pose
   tf::TransformListener listener;
@@ -44,8 +43,26 @@ bool moveRobot(simple_node::SendOffset::Request &req, simple_node::SendOffset::R
     return true;
   }
 
-  // Apply the offset on the Z axis of the current pose
-  current_pose.translate(Eigen::Vector3d(0, 0, offset / 1000.0));
+  // Apply the offset on the given axis of the current pose
+  if(req.Axis == "x")
+  {
+    current_pose.translate(Eigen::Vector3d(req.Offset / 1000.0, 0, 0));
+  }
+  else if(req.Axis == "y")
+  {
+    current_pose.translate(Eigen::Vector3d(0, req.Offset / 1000.0, 0));
+  }
+  else if(req.Axis == "z")
+  {
+    current_pose.translate(Eigen::Vector3d(0, 0, req.Offset / 1000.0));
+  }
+  else
+  {
+    ROS_ERROR_STREAM("Problem occurred during axis request. Aborting...");
+    res.ReturnStatus = false;
+    res.ReturnMessage = "Problem occurred during axis request";
+    return true;
+  }
 
   // Try to move to new pose
   std::vector<geometry_msgs::Pose> way_points_msg(1);

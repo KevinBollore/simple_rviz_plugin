@@ -16,11 +16,17 @@ include(${QT_USE_FILE})
 add_definitions(-DQT_NO_KEYWORDS)
 
 qt4_wrap_cpp(MOC_FILES
-  src/simple_panel.h
+  src/simple_panel_widget.h
+  src/x_widget.h
+  src/y_widget.h
+  src/z_widget.h
 )
 
 set(SOURCE_FILES
-  src/simple_panel.cpp 
+  src/simple_panel_widget.cpp
+  src/x_widget.cpp
+  src/y_widget.cpp
+  src/z_widget.cpp 
   ${MOC_FILES}
 )
 
